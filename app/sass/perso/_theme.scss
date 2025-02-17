@@ -1,0 +1,61 @@
+// *
+// *  Variables et mixim perso
+// *  03/02/20201  version initiale
+// *
+//********************************************************************
+@use "sass:map";
+@use "sass:list";
+
+$Palette-couleur-1: #f2f2f2;
+$Palette-couleur-2: #a6a6a6;
+$Palette-couleur-3: #595959;
+$Palette-couleur-4: #262626;
+$Palette-couleur-5: #0d0d0d;
+
+$theme-font: #212529 !default;
+$theme-bg: white !default;
+
+$theme-font-1: $Palette-couleur-5;
+$theme-font-2: $Palette-couleur-4;
+$theme-font-3: $Palette-couleur-1;
+
+$theme-colors: (
+  "dark": $theme-font #ffffff,
+  "light": #ffffff $theme-font,
+  "primary": $Palette-couleur-1 $theme-font,
+  "secondary": $Palette-couleur-5 $theme-bg,
+  "info": #0dcaf0 $theme-font,
+  "success": rgb(156, 224, 142) $theme-font,
+  "warning": #ffc107 #212529,
+  "error": #dc3545 #ffffff
+) !default;
+
+$theme-secondary: list.nth(map.get($theme-colors, "secondary"), 1);
+$theme-info: list.nth(map.get($theme-colors, "info"), 1);
+$theme-error: list.nth(map.get($theme-colors, "error"), 1);
+
+@each $nom, $val in $theme-colors {
+  .#{$nom} {
+    background-color: list.nth($val, 1);
+    color: list.nth($val, 2);
+  }
+}
+
+@font-face {
+  font-family: "Roboto-Regl";
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "AbrilFatface";
+  font-display: swap;
+  src: url("../assets/fonts/AbrilFatface-Regular.ttf") format("truetype"),
+    url("../assets/fonts/AbrilFatface-Regular.woff") format("woff");
+}
+
+$theme-police-1: "AbrilFatface", sans-serif;
+$theme-police-2: "Roboto-Regl", sans-serif;
+
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

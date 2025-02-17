@@ -1,0 +1,90 @@
+/* islider.scss */
+/* Composant preact */
+
+.islider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    & .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    & .fade {
+        display: flex;
+        width: 100%;
+        height: auto;
+
+
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    & .legend {
+        position: absolute;
+        z-index: 20;
+        opacity: 0;
+        text-align: center;
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 4px #888888;
+        font-weight: 600;
+        width: 100%;
+        bottom: 0;
+
+        &.active {
+            animation: moveUp 1s ease-out 500ms forwards;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out 500ms;
+
+            @keyframes moveUp {
+                from {
+                    transform: translateY(0);
+                }
+
+                to {
+                    transform: translateY(-1rem);
+                }
+            }
+        }
+
+    }
+
+
+    & button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        z-index: 100;
+
+        &.prev {
+            left: 10px;
+        }
+
+        &.next {
+            right: 10px;
+        }
+    }
+}

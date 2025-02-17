@@ -1,0 +1,11 @@
+{
+    "PRD": {
+      "servername": "localhost",
+      "db": "sqlite",
+      "pdo": "devsetting.ini",
+      "prefixe": "site",
+      "mail": "folenskidev@gmail.com",
+      "default": true
+    }
+}
+  

@@ -1,0 +1,10 @@
+// *  fski_css_1_00 - css perso
+// *  reset soft
+//********************************************************************
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,14 @@
+/vendor/
+/folenski/
+/public/js/
+/public/images/
+/public/css/
+/public/media/
+/public/favicon/
+/node_modules/
+/sqldb/
+/.vscode/
+/backend/data/
+/backend/tmp/
+package-lock.json
+composer.lock

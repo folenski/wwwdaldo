@@ -1,0 +1,129 @@
+@use "theme";
+@use "../fski_css_1_00/src/variables";
+
+// *
+// *  CSS pour le site de Daldo Marte
+// *  MEnu et le menu Mobile
+// * Le 06/06/2021
+// *
+//********************************************************************
+
+// *
+// *                Animation pour le site
+// *********************************************************************
+
+.an-apparition {
+  animation: apparition 0.8s ease-out;
+}
+
+.an-fadein {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes menuIn {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+#menu-top {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.menu-dark {
+    background: linear-gradient(7deg,
+        theme.$Palette-couleur-3 0%,
+        theme.$Palette-couleur-2 10%,
+        theme.$Palette-couleur-1 50%,
+        theme.$Palette-couleur-2 90%,
+        theme.$Palette-couleur-3 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: menuIn 0.5s ease;
+  }
+
+  & .active {
+    border-bottom: 5px solid theme.$Palette-couleur-5;
+  }
+
+  & .first {
+    align-self: center;
+    padding: 0rem 1rem 0.5rem;
+    color: theme.$Palette-couleur-3;
+    font-weight: bold;
+    font-size: 1.3rem;
+    opacity: 0;
+
+    &.mpdp {
+      opacity: 1;
+    }
+  }
+
+  & .secondth {
+    align-self: center;
+
+    & a {
+      padding: 0.5rem 1rem;
+      font-weight: bolder;
+    }
+  }
+
+  & .thirth {
+    align-self: center;
+    margin-right: 5rem;
+
+    & a {
+      padding: 0.5rem 0.3rem;
+    }
+
+    & img {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+// *
+// *                        Menu  pc
+//*********************************************************************
+.mymenu {
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  & li {
+    display: inline;
+    position: relative;
+    text-align: -webkit-match-parent;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      height: 5px;
+      width: 100%;
+      transition: transform 0.4s ease-in;
+      background: theme.$Palette-couleur-2;
+    }
+
+    &:hover::before {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  & a {
+    @extend %supp-a-btn;
+    display: block;
+  }
+}

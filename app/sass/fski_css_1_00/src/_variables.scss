@@ -1,0 +1,34 @@
+// *
+// *  Variables et mixim perso
+// *  03/02/20201  version initiale
+// *
+//********************************************************************
+
+//* la taille maximun du container
+$max-container: 1200px;
+
+//*  Gestion de l'écran
+$small: 576px !default;
+$medium: 768px !default;
+$large: 960px !default;
+
+$medium-up: "only screen and (min-width: #{$medium})";
+$medium-down: "only screen and (max-width: #{$medium})";
+
+$large-up: "only screen and (min-width: #{$large})";
+$large-down: "only screen and (max-width: #{$large})";
+
+$small-up: "only screen and (min-width: #{$small})";
+$small-down: "only screen and (max-width: #{$small})";
+
+//* une fonction pour faciliter le chargement des polices google
+@mixin google-font($family) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}");
+}
+
+%supp-a-btn {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+}
+

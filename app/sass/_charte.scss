@@ -1,0 +1,48 @@
+// *
+// *  Charte Graphique pour  le site de Carracedo
+// *  maj du 25/05/2021
+// *
+//********************************************************************
+@font-face {
+  font-family: "Roboto-Regular";
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "AbrilFatface-Regular";
+  font-display: swap;
+  src: url("../assets/fonts/AbrilFatface-Regular.ttf") format("truetype"),
+    url("../assets/fonts/AbrilFatface-Regular.woff") format("woff");
+}
+
+$Agencement-couleur-1: #f2f2f2;
+$Agencement-couleur-2: #a6a6a6;
+$Agencement-couleur-3: #595959;
+$Agencement-couleur-4: #262626;
+$Agencement-couleur-5: #0d0d0d;
+
+$color-1: black;
+$color-2: white;
+
+$background-color: $Agencement-couleur-1;
+$p-titre: "AbrilFatface-Regular", Arial, Helvetica;
+$p-texte: "Roboto-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+  Helvetica, "Noto Sans", sans-serif;
+$p-texte-2: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica,
+  "Noto Sans", sans-serif;
+
+$Agencement-couleur: (
+  "1": $Agencement-couleur-1,
+  "2": $Agencement-couleur-2,
+  "3": $Agencement-couleur-3,
+  "4": $Agencement-couleur-4,
+  "5": $Agencement-couleur-5
+);
+
+@each $c-nbr, $c-color in $Agencement-couleur {
+  .site-bg-#{$c-nbr} {
+    background-color: $c-color;
+  }
+}

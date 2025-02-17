@@ -1,0 +1,211 @@
+@use "../fski_css_1_00/src/variables";
+@use "../fski_css_1_00/src/modeles";
+@use "theme";
+
+// *
+// *  CSS pour le site de Daldo Marte
+// *  Body et les styles communs à toutes les pages
+// * Le 06/06/2021
+// *
+//********************************************************************
+
+// *
+// *                  Objets SCSS
+// ********************************************************************
+
+%paralax {
+  width: 100%;
+  overflow: hidden;
+
+  @supports (-webkit-touch-callout: none) {
+    background: {
+      attachment: scroll;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    background: {
+      attachment: fixed;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+}
+
+body {
+  font-family: theme.$theme-police-2;
+  color: theme.$theme-font;
+  background-color: theme.$Palette-couleur-1;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0rem;
+  font-size: 2.2rem;
+  font-family: theme.$theme-police-1;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0.5rem 0rem;
+  font-family: theme.$theme-police-2;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-family: theme.$theme-police-2;
+  text-shadow: 1px 1px 4px #888888;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+h4 {
+  font-family: theme.$theme-police-2;
+  font-size: 1.4rem;
+  margin: 20px auto;
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.3rem;
+  white-space: break-word;
+}
+
+
+.table-hover {
+  width: 100%;
+  margin: 1rem 0rem;
+
+  tr {
+    vertical-align: top;
+  }
+
+  th {
+    width: 15%;
+    padding: 0.3rem 1rem;
+    text-align: left;
+    font-weight: bolder;
+  }
+
+  td {
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    font-weight: left;
+    white-space: break-word;
+    vertical-align: top;
+  }
+}
+
+// *
+// *                          entete
+//*********************************************************************
+.myentete {
+  text-align: center;
+  background-color: theme.$Palette-couleur-1;
+  width: 100%;
+
+  & h1 {
+    margin: 1rem 0 0 0;
+    font-size: 2.5rem;
+    color: black;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: enteteOpacityTranslate 1.5s ease-in 0.3s forwards;
+
+    @keyframes enteteOpacityTranslate {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  & h2 {
+    margin: 0.5rem 0;
+    font-size: 1.6rem;
+    //transition: opacity 3s ease-in;
+    animation: enteteOpacity 3s ease-in 0.3s forwards;
+
+    @keyframes enteteOpacity {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  & a {
+    @extend %supp-a-btn;
+  }
+
+
+}
+
+// *                            Footer
+// *********************************************************************
+footer {
+  width: 100%;
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+
+  @media #{variables.$small-down} {
+    opacity: 0;
+  }
+
+  & img {
+    width: 80px;
+    aspect-ratio: 1/1;
+  }
+
+  & hr {
+    margin: 0.5rem auto;
+    width: 20%;
+    border-top: 1px solid theme.$Palette-couleur-3;
+  }
+}
+
+// *                   Les titres mis en valeur
+// *********************************************************************
+
+.myHTitle {
+  margin: 0px;
+  min-height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & div {
+      background-color: rgba(0, 0, 0, 0.4);
+      color: theme.$Palette-couleur-1;
+      width: 40%;
+      padding: 20px;
+      text-align: center;
+  }
+}

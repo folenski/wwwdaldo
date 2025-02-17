@@ -1,0 +1,173 @@
+// *
+// * CSS pour le site de Daldo Marte
+// * 03/02/2021 Mise à jour en scss
+// * 11/12/2021 update avec fski_css_1_00
+// * 05/02/2022 fix ipad paralax
+//********************************************************************
+
+@use "fski_css_1_00/src/reset-soft";
+@use "fski_css_1_00/src/variables";
+@use "perso/theme";
+@use "fski_css_1_00/src/container";
+@use "fski_css_1_00/src/modeles";
+@use "fski_css_1_00/src/form";
+
+@use "perso/daldo-commun";
+@use "perso/daldo-menu";
+@use "perso/menu-mobile";
+@use "perso/islider";
+@use "perso/home";
+@use "perso/news";
+@use "perso/video";
+
+.hide-small {
+  @media #{variables.$small-down} {
+    display: none;
+  }
+}
+
+
+.myhomeparalax {
+
+  @extend %paralax;
+  min-height: 700px;
+
+  @media #{variables.$small-down} {
+    min-height: 600px;
+  }
+
+  &.bg-3 {
+    &.jpg {
+      background-image: url(../assets/images/daldoBio.jpg);
+
+      @media #{variables.$small-down} {
+        background-image: url(../assets/images/daldoBio.jpg);
+      }
+    }
+  }
+}
+
+.mylogo {
+  width: 200px;
+  height: auto;
+
+  @media #{variables.$medium-down} {
+    width: 150px;
+  }
+}
+
+
+.shadow {
+  box-shadow: theme.$box-shadow;
+}
+
+.pic-overlay {
+  position: relative;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  & .text {
+    position: absolute;
+    color: theme.$theme-bg;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  & .effect-left {
+    position: absolute;
+    z-index: 25;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(theme.$Palette-couleur-5, 0.9);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 0.5s ease;
+  }
+
+  &:hover .effect-left {
+    width: 100%;
+  }
+
+  &:hover .text {
+    opacity: 1;
+    transition: opacity 0.3s ease 0.5s;
+  }
+}
+
+
+// *
+// *                  biographie de Daldo Marte
+// *********************************************************************
+
+.biography {
+  overflow: hidden;
+
+  table tr:hover {
+    background-color: theme.$Palette-couleur-4;
+    color: theme.$theme-bg;
+    font-weight: 600;
+  }
+
+  @media #{variables.$small-down} {
+    padding: 0rem 0.5rem;
+  }
+
+  hr {
+    width: 20%;
+    margin: auto;
+    border-top: 1px solid rgb(161, 161, 161);
+  }
+}
+
+
+// *
+// *                Le formulaire de contact
+// *********************************************************************
+.contact {
+  min-width: 320px;
+  text-align: center;
+  padding: 2rem;
+
+  @media #{variables.$small-down} {
+    padding: 0.5rem;
+  }
+}
+
+.form-overlay {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.btn {
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: theme.$Palette-couleur-2;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
+
+// *
+// *                 Le chargement
+// *********************************************************************
+#daldo-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: azure;
+  display: none;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+}

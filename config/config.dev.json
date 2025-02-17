@@ -1,0 +1,12 @@
+{
+    "DEV": {
+      "servername": "localhost",
+      "db": "sqlite",
+      "pdo": "devsetting.ini",
+      "prefixe": "site",
+      "mail": "",
+      "default": true
+    }
+
+}
+  

@@ -1,0 +1,84 @@
+@use "theme";
+@use "../fski_css_1_00/src/variables";
+
+// *
+// *               les articles ou actuality
+// *********************************************************************
+.newsBg {
+    background-image: url("../assets/images/daldoBgactuality.jpg");
+}
+
+.news {
+    margin: 1rem 0rem;
+    padding: 1rem 0rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+
+    @media #{variables.$small-down} {
+        margin: 0rem;
+        padding: 0.5rem;
+        box-shadow: unset;
+    }
+
+    @media #{variables.$small-up} {
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    & div {
+        margin: 0rem 1rem;
+
+        @media #{variables.$small-down} {
+            margin: 0rem;
+        }
+    }
+
+    & h3 {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgb(161, 161, 161);
+    }
+
+    & img {
+        width: 350px;
+        height: auto;
+        border-radius: 0.5rem;
+    }
+
+    & .readmore {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        & img {
+            width: 1.8rem;
+            margin-right: 1rem;
+        }
+    }
+
+}
+
+.news_open {
+    & .head {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 1rem 0rem;
+    }
+
+    & .pdf a {
+        margin: 1rem 0rem;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin: 1rem 0;
+    }
+}

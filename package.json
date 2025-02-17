@@ -1,0 +1,30 @@
+{
+  "name": "my-daldo",
+  "version": "3.0.0",
+  "description": "Tools for Daldo the website",
+  "scripts": {
+    "app dev": "node env/scripts/build.js",
+    "app prod": "eslint ./app/src/**/*.{js,jsx,ts,tsx} && node env/scripts/build.js production",
+    "deploy": "env/scripts/povh.sh",
+    "lint": "eslint ./app/src/**/*.{js,jsx,ts,tsx}"
+  },
+  "author": "folenski",
+  "license": "ISC",
+  "dependencies": {
+    "fski-reveal": "^1.2.0",
+    "fski-videoplay": "^1.0.1",
+    "gsap": "^3.12.2",
+    "preact": "^10.19.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.20.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "esbuild": "^0.25.0",
+    "esbuild-sass-plugin": "^3.3.1",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "node-watch": "^0.7.4"
+  }
+}
