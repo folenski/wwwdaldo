@@ -1,0 +1,109 @@
+{
+  "nom": "environment",
+  "row": [
+    {
+      "name": "DEV",
+      "j_option": {
+        "log": true,
+        "debug": false,
+        "maintenance": false,
+        "pref_uri": "/d/",
+        "prod": false,
+        "clean_limit": 1,
+        "purge": 7,
+        "routes": [
+          "www",
+          "message",
+          "rest",
+          "reload"
+        ],
+        "custom_link": [],
+        "contact": {
+          "user": "svcadmin",
+          "mail_template": "Bonjour,<br/><p>Message reçu de {{nom}} (email {{mail}})</p><p>{{message}}</p><br/>Cordialement,<br/><br/>- Admin - "
+        },
+        "index": [
+          {
+            "language": "en",
+            "default": true,
+            "ref_nav": "menu_intro",
+            "ref_content": "daldo_intro",
+            "entry_file": "intro.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          },
+          {
+            "language": "en",
+            "uri": "menu/",
+            "ref_content": "home",
+            "ref_nav": "menu",
+            "entry_file": "daldo.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          },
+          {
+            "language": "en",
+            "uri": "news/",
+            "ref_content": "",
+            "ref_nav": "menu_news",
+            "entry_file": "daldo_news.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          }
+        ]
+      }
+    },
+    {
+      "name": "PRD",
+      "j_option": {
+        "log": false,
+        "debug": false,
+        "maintenance": false,
+        "pref_uri": "/d/",
+        "prod": true,
+        "clean_limit": 1,
+        "purge": 30,
+        "routes": [
+          "www",
+          "message",
+          "rest",
+          "reload"
+        ],
+        "custom_link": [],
+        "contact": {
+          "user": "svcadmin",
+          "mail_template": "Bonjour,<br/><p>Message reçu de {{nom}} (email {{mail}})</p><p>{{message}}</p><br/>Cordialement,<br/><br/>- Admin - "
+        },
+        "index": [
+          {
+            "language": "en",
+            "default": true,
+            "ref_nav": "menu_intro",
+            "ref_content": "daldo_intro",
+            "entry_file": "intro.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          },
+          {
+            "language": "en",
+            "uri": "menu/",
+            "ref_content": "home",
+            "ref_nav": "menu",
+            "entry_file": "daldo.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          },
+          {
+            "language": "en",
+            "uri": "news/",
+            "ref_content": "",
+            "ref_nav": "menu_news",
+            "entry_file": "daldo_news.php",
+            "title": "Daldo Marte Artist Cubain",
+            "meta": "Daldo Marte Limonta is a young Cuban artist who has performed the role of superhero for more than a decade. He is a tireless creator, and his obsession is to find a space in the world, which has presented itself as alien since his childhood. The means and resources he uses to reach his objective, employing art, evince an inventive and extraordinary aesthetic sensibility."
+          }
+        ]
+      }
+    }
+  ]
+}

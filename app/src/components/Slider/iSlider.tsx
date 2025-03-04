@@ -3,12 +3,13 @@ import { useEffect, useState } from "preact/hooks";
 
 export function ISlider(props: {
   url: string;
-  imgs: string;
-  txts: string;
+  imgs: string[];
+  txts: string[];
   alt: string;
   timer: number;
   control: boolean;
   effect: string;
+  maxwidth?: string;
 }) {
   type storeSlider = {
     images: string[];
@@ -23,14 +24,14 @@ export function ISlider(props: {
   };
 
   const [Slider, setSlider] = useState<storeSlider>({
-    images: [],
-    textes: [],
-    classEffect: "slides",
+    images: props.imgs,
+    textes: props.txts,
+    classEffect: props.effect,
     alt: props.alt,
     cur: 0,
     curOffset: 0,
     offset: 600,
-    id: "slider999",
+    id: "slider_" + Math.floor(Math.random() * 1000),
     stopSlide: false
   });
 
@@ -47,20 +48,10 @@ export function ISlider(props: {
 
     const sliderRef = document.getElementById(Slider.id);
     Slider.offset = sliderRef ? sliderRef.offsetWidth : Slider.offset;
-    Slider.curOffset = -Slider.cur * Slider.offset + 1;
+    Slider.curOffset = -Slider.cur * Slider.offset;
     Slider.stopSlide = stop;
     setSlider({ ...Slider });
   };
-
-  if (Slider.images.length === 0) {
-    props.imgs.split("|").map((img) => {
-      Slider.images.push(props.url + img);
-    });
-    props.txts.split("|").map((txt) => {
-      Slider.textes.push(txt);
-    });
-    if (props.effect === "fade") Slider.classEffect = "fade";
-  }
 
   if (props.imgs.length === 0) return null;
 
@@ -77,8 +68,17 @@ export function ISlider(props: {
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [Slider.stopSlide]);
 
+  let style = {};
+  if (props.maxwidth) {
+    style = {
+      maxWidth: props.maxwidth
+    };
+  }
+
+  console.log("debug", Slider);
+
   return (
-    <div className="islider" id={Slider.id}>
+    <div className="islider" style={style} id={Slider.id}>
       <div
         className={Slider.classEffect}
         style={{ transform: `translateX(${Slider.curOffset}px)` }}
@@ -87,7 +87,7 @@ export function ISlider(props: {
           <img
             className={index === Slider.cur ? "active" : ""}
             key={index}
-            src={image}
+            src={props.url + image}
             alt={Slider.alt}
             loading={index === 0 ? "eager" : "lazy"}
           />

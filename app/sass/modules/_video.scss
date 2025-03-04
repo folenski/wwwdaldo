@@ -1,9 +1,9 @@
 @use "theme";
-@use "../fski_css_1_00/src/variables";
+@use "../commun/variables";
 
 // *
 // *               video
 // *********************************************************************
 .videoBg {
-    background-image: url("../assets/images/daldoBgactuality.jpg");
+    background-image: url("../assets/images/BVideo.jpg");
 }

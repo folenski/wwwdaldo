@@ -1,0 +1,52 @@
+[
+  {
+    "name": "HOME",
+    "first": true,
+    "uri": "@menu/start",
+    "ref": "home",
+    "image": "/images/icons/home.svg"
+  },
+  {
+    "name": "NEWS",
+    "uri": "@menu/news",
+    "ref": "news_content",
+    "image": "/images/icons/public.svg"
+  },
+  {
+    "name": "BIOGRAPHY",
+    "uri": "@menu/biography",
+    "ref": "bio",
+    "image": "/images/icons/subject.svg"
+  },
+  {
+    "name": "VIDEO",
+    "uri": "@menu/video",
+    "ref": "video",
+    "image": "/images/icons/videocam_24dp.svg"
+  },
+  {
+    "name": "MORE",
+    "down": true,
+    "ref": "bio",
+    "uri": "_more",
+    "image": "/images/icons/more_vert.svg",
+    "dropdown": [
+      {
+        "name": "Contact Me",
+        "uri": "@menu/contact",
+        "ref": "contact",
+        "image": "/images/icons/envelope-regular.svg"
+      },
+      {
+        "name": "Instagram",
+        "uri": "https://www.instagram.com/daldo_marte/",
+        "image": "/images/icons/instagram-brands.svg"
+      },
+      {
+        "name": "Youtube",
+        "uri": "https://www.youtube.com/@daldomarte314/videos",
+        "image": "/images/icons/youtube-brands.svg"
+      }
+    ]
+  }
+]

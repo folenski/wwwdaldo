@@ -32,5 +32,5 @@ export function Block(props: { timer: string; classes: string }) {
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [Bl.classes]);
 
-  return <div className={"dah " + Bl.classes[Bl.cur]}></div>;
+  return <div className={Bl.classes[Bl.cur]}></div>;
 }

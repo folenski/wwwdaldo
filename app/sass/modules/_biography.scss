@@ -1,0 +1,25 @@
+@use "../commun/variables";
+@use "theme";
+
+// *                      Page biographie
+// *********************************************************************
+
+.biography {
+  overflow: hidden;
+
+  table tr:hover {
+    background-color: theme.$Palette-couleur-4;
+    color: theme.$theme-bg;
+    font-weight: 600;
+  }
+
+  @media #{variables.$small-down} {
+    padding: 0rem 0.5rem;
+  }
+
+  hr {
+    width: 20%;
+    margin: auto;
+    border-top: 1px solid rgb(161, 161, 161);
+  }
+}

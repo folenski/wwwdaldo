@@ -8,6 +8,8 @@
  * @since 07/12/2022 - supression de VideoAutoplay
  * @since 23/08/2022 - Ré-écriture en TS
  * @since 11/02/2025 - Ajout d'un composant iSlider
+ * @since 01/03/2025 - Ajout du composant News
+ *
  */
 
 /** @tsx h */
@@ -16,16 +18,25 @@ import { render } from "preact";
 import { Contact } from "./modules/Contact";
 import { Reveal } from "fski-reveal";
 import { Message } from "./model/message";
-import { ISlider } from "./components/iSlider";
+import { ISlider } from "./components/Slider/iSlider";
 import { IOver } from "./components/iOver";
 import { CanIuse } from "./services/canIuse";
 import { MyHeading } from "./components/myHeading";
 import { Block } from "./components/block";
+import { DisplayNews } from "./components/news/displaynews";
 import { Config } from "./cfg/config.app";
 import { MessageService } from "./services/message.service";
 
 const msgGateway = new MessageService(Config.endpointMsg);
 let supAvif = true;
+
+const Str2Tab = (str: string, separator: string): string[] => {
+  const tab = [];
+  str.split(separator).map((txt) => {
+    tab.push(txt);
+  });
+  return tab;
+};
 
 const cbMessage = async (form: HTMLFormElement): Promise<string> => {
   const data: Message = { name: "", mail: "", message: "" };
@@ -63,7 +74,7 @@ const composants = document.querySelectorAll(
 composants.forEach((div) => {
   const prefUri = div.dataset?.uri || "";
   const alt = div.dataset?.alt || "";
-  const effect = div.dataset?.effect || "";
+  const effect = div.dataset?.effect || "slides";
   const pbclasses = div.dataset?.classes || ""; // mandatory
   const pbtimer = div.dataset?.timer || ""; // optional, 10s by default
   let images = div.dataset?.images || ""; // mandatory
@@ -91,11 +102,12 @@ composants.forEach((div) => {
         images = images.replace(/\.jpg/g, ".avif");
       }
 
+
       render(
         <ISlider
           url={prefUri}
-          txts={textes}
-          imgs={images}
+          txts={Str2Tab(textes, "|") }
+          imgs={Str2Tab(images, "|") }
           alt={alt}
           timer={timer}
           control={displayCtrl}
@@ -105,12 +117,14 @@ composants.forEach((div) => {
       );
       break;
     case "iover":
-
       if (iAvif === "true" && supAvif) {
         imageSrc = imageSrc.replace(".jpg", ".avif");
       }
 
       render(<IOver alt={alt} image={imageSrc} effect={effect} />, div);
+      break;
+    case "news":
+      render(<DisplayNews />, div);
       break;
   }
 });

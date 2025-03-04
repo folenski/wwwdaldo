@@ -1,5 +1,5 @@
-@use "../fski_css_1_00/src/variables";
-@use "../fski_css_1_00/src/modeles";
+@use "../commun/variables";
+@use "modeles";
 @use "theme";
 
 // *
@@ -34,54 +34,6 @@
       size: cover;
     }
   }
-}
-
-body {
-  font-family: theme.$theme-police-2;
-  color: theme.$theme-font;
-  background-color: theme.$Palette-couleur-1;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  text-align: center;
-  margin: 1rem 0rem;
-  font-size: 2.2rem;
-  font-family: theme.$theme-police-1;
-  font-weight: 600;
-}
-
-h2 {
-  margin: 0.5rem 0rem;
-  font-family: theme.$theme-police-2;
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-h3 {
-  font-size: 1.6rem;
-  font-family: theme.$theme-police-2;
-  text-shadow: 1px 1px 4px #888888;
-  font-weight: 400;
-  text-align: left;
-  margin-bottom: 1rem;
-  padding: 0;
-}
-
-h4 {
-  font-family: theme.$theme-police-2;
-  font-size: 1.4rem;
-  margin: 20px auto;
-  text-align: left;
-}
-
-p {
-  text-align: justify;
-  line-height: 1.3rem;
-  white-space: break-word;
 }
 
 
@@ -159,37 +111,12 @@ p {
     @extend %supp-a-btn;
   }
 
-
-}
-
-// *                            Footer
-// *********************************************************************
-footer {
-  width: 100%;
-  margin: 1rem 0 0.5rem;
-  text-align: center;
-  font-size: 0.8rem;
-
-  @media #{variables.$small-down} {
-    opacity: 0;
-  }
-
-  & img {
-    width: 80px;
-    aspect-ratio: 1/1;
-  }
-
-  & hr {
-    margin: 0.5rem auto;
-    width: 20%;
-    border-top: 1px solid theme.$Palette-couleur-3;
-  }
 }
 
 // *                   Les titres mis en valeur
 // *********************************************************************
 
-.myHTitle {
+.HTitle {
   margin: 0px;
   min-height: 320px;
   background-position: center;
@@ -197,15 +124,4 @@ footer {
   background-size: cover;
   position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & div {
-      background-color: rgba(0, 0, 0, 0.4);
-      color: theme.$Palette-couleur-1;
-      width: 40%;
-      padding: 20px;
-      text-align: center;
-  }
 }

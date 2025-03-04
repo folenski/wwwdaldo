@@ -1,3 +1,5 @@
+import { DisplayNews } from "../components/news/displaynews";
+
 export const Config = {
   name: "Daldo Marte",
   slogan: "ARTIST AND SUPERHERO",
@@ -5,6 +7,9 @@ export const Config = {
   endpoint: "/api/wwwdata",
   endpointMsg: "/api/msg",
   ref2menu: "menu",
+  ref2news: "news",
+  displayNews: 3,
+  media2news: "https://media.daldomarte.com/news/",
   prefUri: "/d/",
   imgTest: "/images/logo/faitacuba.avif",
   composantMenu: {
@@ -15,5 +20,13 @@ export const Config = {
     id: "contactForm",
     effect: "right",
     labelOk: "Ok"
+  },
+  label : {
+    rmore : "Read more",
+    close : "Close",
+    next : "Next",
+    previous : "Previous",
+    rmoreImg : "/images/icons/read_more_24dp.svg",
+    pdfImg : "/images/logo/pdf-file.svg"
   }
 };

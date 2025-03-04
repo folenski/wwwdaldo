@@ -1,0 +1,30 @@
+{
+  "nom": "template",
+  "row": [
+    {
+      "id_div": "menu",
+      "_template": "html/tp_menu.html",
+      "compile": 1,
+      "file_php": "gen_menu.php"
+    },
+    {
+      "id_div": "menu_intro",
+      "_template": "html/tp_menu_intro.html",
+      "compile": 1,
+      "file_php": "gen_menu_intro.php"
+    },
+    {
+      "id_div": "content",
+      "_template": "html/tp_content.html",
+      "compile": 1,
+      "file_php": "gen_content.php"
+    },
+    {
+      "id_div": "news",
+      "_template": "html/tp_news.html",
+      "compile": 1,
+      "order_by" : 1,
+      "file_php": "gen_news.php"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<div class="mymenu secondth">
+  <ul>
+    {{#nav}} 
+    {{^down}}
+      <li {{#active}}class="active"{{/active}}><a href="{{uri}}">{{name}}</a></li>
+    {{/down}}
+    {{/nav}}
+  <ul>
+</div>
+<div class="mymenu thirth">
+  <ul>
+    {{#nav}}
+    {{#dropdown}}
+      <li>
+        <a href="{{uri}}"><img src="{{image}}" alt="{{name}}" /></a>
+      </li>
+    {{/dropdown}}
+    {{/nav}}
+    </ul>
+</div>

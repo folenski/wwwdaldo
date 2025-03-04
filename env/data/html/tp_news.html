@@ -1,0 +1,26 @@
+<div class="container">
+  {{#content}}
+  <div class="container-fluid ns" data-reveal="display">
+    <div class="w40">
+      <img src="{{img_src}}" alt="{{img_alt}}" />
+    </div>
+    <div class="w60">
+      <h3>{{titre_1}}</h3>
+      <h4>{{titre_2}}</h4>
+      <p>{{article}}</p>
+      <p>{{rmtext}}</p>
+      {{#readmore}}
+      <p>
+        <a class="readmore" href="{{link}}">
+          <img
+            src="/images/icons/read_more_24dp.svg"
+            alt="Read more"
+          />
+          {{text}}
+        </a>
+      </p>
+      {{/readmore}}
+    </div>
+  </div>
+  {{/content}}
+</div>
