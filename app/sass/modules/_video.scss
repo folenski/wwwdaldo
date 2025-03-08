@@ -2,8 +2,23 @@
 @use "../commun/variables";
 
 // *
-// *               video
+// *               page des videos
 // *********************************************************************
 .videoBg {
     background-image: url("../assets/images/BVideo.jpg");
+}
+
+.vg {
+    margin: 1rem auto;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & iframe {
+        margin: 0.5rem;
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+    }
 }

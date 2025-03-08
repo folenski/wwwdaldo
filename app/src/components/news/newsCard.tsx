@@ -5,12 +5,16 @@ import { Config } from "../../cfg/config.app";
 /**
  * Affiche une news
  */
-export function NewsCard(props: { onenews: News; onModal: (news : News) => void }) {
+export function NewsCard(props: {
+  onenews: News;
+  loading: boolean;
+  onModal: (news: News) => void;
+}) {
   //****** Tag pour afficher le pdf ****************
   const PdfLink = (props: { link: string; text: string }) => {
     return (
       <a href={props.link} target="_blank">
-        <img src={Config.label.pdfImg} alt="download the pdf" />
+        <img src={Config.News.pdf.src} alt={Config.News.pdf.label} />
         <span>{props.text}</span>
       </a>
     );
@@ -21,8 +25,12 @@ export function NewsCard(props: { onenews: News; onModal: (news : News) => void 
   const More = (props: { onClick: () => void }) => {
     return (
       <Fragment>
-        <button onClick={props.onClick}>{Config.label.rmore}</button>
-        <img onClick={props.onClick} src={Config.label.rmoreImg} alt="Read more" />
+        <button onClick={props.onClick}>{Config.News.more.label}</button>
+        <img
+          onClick={props.onClick}
+          src={Config.News.more.src}
+          alt={Config.News.more.label}
+        />
       </Fragment>
     );
   };
@@ -43,6 +51,7 @@ export function NewsCard(props: { onenews: News; onModal: (news : News) => void 
           <img
             src={Config.media2news + props.onenews.poster.src + ".jpg"}
             alt={props.onenews.poster.alt}
+            loading={props.loading ? "eager" : "lazy"}
           />
         </picture>
       </div>

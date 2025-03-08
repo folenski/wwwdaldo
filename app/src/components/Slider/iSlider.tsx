@@ -57,7 +57,7 @@ export function ISlider(props: {
 
   useEffect(() => {
     if (Slider.stopSlide === true) {
-      console.log("Slider has stop by user");
+      console.info("Slider has stop by user");
       return;
     }
 

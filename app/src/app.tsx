@@ -15,19 +15,16 @@
 /** @tsx h */
 import { h } from "preact";
 import { render } from "preact";
-import { Contact } from "./modules/Contact";
 import { Reveal } from "fski-reveal";
-import { Message } from "./model/message";
 import { ISlider } from "./components/Slider/iSlider";
 import { IOver } from "./components/iOver";
 import { CanIuse } from "./services/canIuse";
-import { MyHeading } from "./components/myHeading";
+import { MyHeading } from "./components/heading/myHeading";
+import { Contact } from "./components/contact/contact";
 import { Block } from "./components/block";
 import { DisplayNews } from "./components/news/displaynews";
 import { Config } from "./cfg/config.app";
-import { MessageService } from "./services/message.service";
 
-const msgGateway = new MessageService(Config.endpointMsg);
 let supAvif = true;
 
 const Str2Tab = (str: string, separator: string): string[] => {
@@ -38,25 +35,6 @@ const Str2Tab = (str: string, separator: string): string[] => {
   return tab;
 };
 
-const cbMessage = async (form: HTMLFormElement): Promise<string> => {
-  const data: Message = { name: "", mail: "", message: "" };
-  const fields: Array<keyof Message> = ["mail", "name", "subject", "message"];
-  fields.forEach((f) => {
-    const item = form.elements.namedItem(f);
-    if (
-      item instanceof HTMLInputElement ||
-      item instanceof HTMLTextAreaElement
-    ) {
-      data[f] = item.value;
-    }
-  });
-  const answer = await msgGateway.post(data);
-  if (answer == 0) return "Thank you";
-  return "Sorry something was wrong, please try later";
-};
-
-// Gestion du formulaire de Contact
-Contact.bind(cbMessage);
 // Animation du DOM avec l'attribut data-reveal
 Reveal.bind();
 
@@ -66,6 +44,11 @@ CanIuse.hasAvif(Config.imgTest).then((isSupported) => {
     console.log("AVIF is NOT supported.");
   }
 });
+
+const contact = document.getElementById(Config.Contact.id);
+if (contact) {
+  render(<Contact />, contact);
+}
 
 const composants = document.querySelectorAll(
   "[data-component]"

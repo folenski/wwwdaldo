@@ -1,32 +1,69 @@
-import { DisplayNews } from "../components/news/displaynews";
+/**
+ * Configuration globale du site
+ */
 
 export const Config = {
   name: "Daldo Marte",
   slogan: "ARTIST AND SUPERHERO",
   homelink: "/d/menu/start",
   endpoint: "/api/wwwdata",
-  endpointMsg: "/api/msg",
-  ref2menu: "menu",
-  ref2news: "news",
-  displayNews: 3,
   media2news: "https://media.daldomarte.com/news/",
-  prefUri: "/d/",
   imgTest: "/images/logo/faitacuba.avif",
-  composantMenu: {
+  Menu: {
     id: "menu-top",
+    reference: "menu",
+    prefUri: "/d/",
     trigger: 120
   },
-  composantContact: {
-    id: "contactForm",
-    effect: "right",
-    labelOk: "Ok"
+  News: {
+    reference: "news",
+    display: 3,
+    more: {
+      label : "Read more",
+      src: "/images/icons/read_more_24dp.svg"
+    },
+    pdf: {
+      label : "Download the pdf file",
+      src: "/images/logo/pdf-file.svg"
+    },
+    label: {
+      close: "Close",
+      next: "Next",
+      previous: "Previous",
+    }
   },
-  label : {
-    rmore : "Read more",
-    close : "Close",
-    next : "Next",
-    previous : "Previous",
-    rmoreImg : "/images/icons/read_more_24dp.svg",
-    pdfImg : "/images/logo/pdf-file.svg"
+  Contact: {
+    id: "cForm",
+    endpointMsg: "/api/msg",
+    effect: "right",
+    labelOk: "Ok",
+    retKO : "Sorry something was wrong, please try later",
+    retOK : "Thank you",
+    labelSend: "Send",
+    fields: [
+      {
+        name: "name",
+        type: "text",
+        imgSrc: "/images/icons/person_outline.svg",
+        required: true
+      },
+      {
+        name: "mail",
+        type: "email",
+        imgSrc: "/images/icons/alternate_email.svg",
+        required: true
+      },
+      {
+        name: "subject",
+        type: "text",
+        imgSrc: "/images/icons/subject.svg",
+        required: false
+      },
+      {
+        name: "message",
+        type: "textArea",
+      },
+
+    ]
   }
 };

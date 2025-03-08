@@ -5,7 +5,7 @@
   "scripts": {
     "app dev": "node app/make/build.js",
     "app prod": "eslint ./app/src/**/*.{js,jsx,ts,tsx} && node app/make/build.js production",
-    "deploy": "env/scripts/povh.sh",
+    "deploy": "envs/scripts/povh.sh",
     "lint": "eslint ./app/src/**/*.{js,jsx,ts,tsx}"
   },
   "author": "folenski",

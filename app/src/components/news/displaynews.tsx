@@ -7,7 +7,7 @@ import { DataService } from "../../services/data.service";
 import { Config } from "../../cfg/config.app";
 
 /**
- * news : gestion de la page de news
+ * news : Gére la liste des news
  */
 export function DisplayNews() {
   type tnews = {
@@ -41,19 +41,19 @@ export function DisplayNews() {
     setNewsDaldo({
       ...newsDaldo,
       hasR1: true,
-      hasR2: newsDaldo.data.length > newsDaldo.r2 + Config.displayNews,
-      r1: newsDaldo.r1 + Config.displayNews,
-      r2: newsDaldo.r2 + Config.displayNews
+      hasR2: newsDaldo.data.length > newsDaldo.r2 + Config.News.display,
+      r1: newsDaldo.r1 + Config.News.display,
+      r2: newsDaldo.r2 + Config.News.display
     });
   };
 
   const onClickPrevious = () => {
     setNewsDaldo({
       ...newsDaldo,
-      hasR1: newsDaldo.r1 - Config.displayNews > 0,
+      hasR1: newsDaldo.r1 - Config.News.display > 0,
       hasR2: true,
-      r1: newsDaldo.r1 - Config.displayNews,
-      r2: newsDaldo.r2 - Config.displayNews
+      r1: newsDaldo.r1 - Config.News.display,
+      r2: newsDaldo.r2 - Config.News.display
     });
   };
 
@@ -64,18 +64,18 @@ export function DisplayNews() {
     return (
       <Fragment>
         {props.news.slice(newsDaldo.r1, newsDaldo.r2).map((item, index) => (
-          <NewsCard key={index} onenews={item} onModal={onClickModal} />
+          <NewsCard key={index} onenews={item} onModal={onClickModal} loading={index === 0} />
         ))}
         <div className={"nnav"}>
           {newsDaldo.hasR1 ? (
             <button className={"btn secondary"} onClick={onClickPrevious}>
-              {Config.label.previous}
+              {Config.News.label.previous}
             </button>
           ) : <div></div>}
 
           {newsDaldo.hasR2 ? (
             <button className={"btn secondary"} onClick={onClickNext}>
-              {Config.label.next}
+              {Config.News.label.next}
             </button>
           ) : null}
         </div>
@@ -87,7 +87,7 @@ export function DisplayNews() {
     loaded: false,
     onModal: false,
     r1: 0,
-    r2: Config.displayNews,
+    r2: Config.News.display,
     hasR1: false,
     hasR2: false,
     data: []
@@ -98,12 +98,12 @@ export function DisplayNews() {
     if (!newsDaldo.loaded) {
       const fetch = async () => {
         const gway = new DataService(Config.endpoint);
-        const nread = await gway.getNews(Config.ref2news);
+        const nread = await gway.getNews(Config.News.reference);
         const nfil = nread.filter((item) => item.display);
         setNewsDaldo({
           ...newsDaldo,
           loaded: true,
-          hasR2: nfil.length > Config.displayNews,
+          hasR2: nfil.length > Config.News.display,
           data: nfil
         });
       };

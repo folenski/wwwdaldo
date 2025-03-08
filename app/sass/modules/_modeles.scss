@@ -45,3 +45,26 @@
   top: 0px;
   z-index: 30;
 }
+
+%paralax {
+  width: 100%;
+  overflow: hidden;
+
+  @supports (-webkit-touch-callout: none) {
+    background: {
+      attachment: scroll;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    background: {
+      attachment: fixed;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+}

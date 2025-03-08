@@ -23,3 +23,27 @@
     border-top: 1px solid rgb(161, 161, 161);
   }
 }
+
+.table-hover {
+  width: 100%;
+  margin: 1rem 0rem;
+
+  tr {
+    vertical-align: top;
+  }
+
+  th {
+    width: 15%;
+    padding: 0.3rem 1rem;
+    text-align: left;
+    font-weight: bolder;
+  }
+
+  td {
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    font-weight: left;
+    white-space: break-word;
+    vertical-align: top;
+  }
+}

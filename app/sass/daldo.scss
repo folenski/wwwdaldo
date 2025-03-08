@@ -12,7 +12,6 @@
 @use "modules/theme";
 @use "modules/container";
 @use "modules/modeles";
-@use "modules/daldo-commun";
 @use "modules/daldo-menu";
 @use "modules/menu-mobile";
 @use "modules/islider";
@@ -20,7 +19,9 @@
 @use "modules/news";
 @use "modules/biography";
 @use "modules/video";
+@use "modules/contact";
 @use "modules/form";
+@use "modules/heading";
 @use "modules/footer";
 
 body {
@@ -55,7 +56,6 @@ h3 {
   font-weight: 400;
   text-align: left;
   margin-bottom: 1rem;
-  padding: 0;
 }
 
 h4 {
@@ -171,28 +171,6 @@ p {
   }
 }
 
-
-// *
-// *                Le formulaire de contact
-// *********************************************************************
-.contact {
-  min-width: 320px;
-  text-align: center;
-  padding: 2rem;
-
-  @media #{variables.$small-down} {
-    padding: 0.5rem;
-  }
-}
-
-.form-overlay {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  font-weight: 500;
-}
-
-
-
 // *
 // *                 Le chargement
 // *********************************************************************
@@ -205,4 +183,18 @@ p {
   z-index: 100;
   height: 100vh;
   width: 100vw;
+}
+
+// *
+// *                 L'en-tete de certaines pages
+// *********************************************************************
+
+.HTitle {
+  margin: 0px;
+  min-height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
 }

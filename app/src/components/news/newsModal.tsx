@@ -4,7 +4,7 @@ import { Config } from "../../cfg/config.app";
 import { ISlider } from "../Slider/iSlider";
 
 /**
- * Affiche La modale de la news
+ * Gère de détail d'une news
  */
 export function NewsModal(props: { news?: News; onClose: () => void }) {
   if (!props.news) {
@@ -35,7 +35,7 @@ export function NewsModal(props: { news?: News; onClose: () => void }) {
       ) : null}
 
       <button className={"btn secondary"} onClick={props.onClose}>
-        {Config.label.close}
+        {Config.News.label.close}
       </button>
     </div>
   );

@@ -6,7 +6,8 @@
 
 ### Added
 
-- Add a Preact component to build the news page
+- Add a PReact component to build the news page
+- Add a PReact component to produce a contact form
 
 ### Fixed
 
