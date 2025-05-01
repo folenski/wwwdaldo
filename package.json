@@ -6,6 +6,7 @@
     "app dev": "node app/make/build.js",
     "app prod": "eslint ./app/src/**/*.{js,jsx,ts,tsx} && node app/make/build.js production",
     "deploy": "envs/scripts/povh.sh",
+    "deployprd": "envs/scripts/povh.sh wwwprd",
     "lint": "eslint ./app/src/**/*.{js,jsx,ts,tsx}"
   },
   "author": "folenski",

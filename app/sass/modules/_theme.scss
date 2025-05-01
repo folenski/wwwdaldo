@@ -27,10 +27,10 @@ $theme-colors: (
   "info": #0dcaf0 $theme-font,
   "success": rgb(156, 224, 142) $theme-font,
   "warning": #ffc107 #212529,
-  "error": #dc3545 #ffffff
-) !default;
+  "error": #dc3545 #ffffff) !default;
 
-$theme-secondary: list.nth(map.get($theme-colors, "secondary"), 1);
+$theme-secondary: list.nth(map.get($theme-colors, "secondary"), 1
+);
 $theme-info: list.nth(map.get($theme-colors, "info"), 1);
 $theme-error: list.nth(map.get($theme-colors, "error"), 1);
 
@@ -42,20 +42,26 @@ $theme-error: list.nth(map.get($theme-colors, "error"), 1);
 }
 
 @font-face {
-  font-family: "Roboto-Regl";
+  font-family: "Helvetica LT Std";
   font-display: swap;
-  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"),
-    url("../assets/fonts/Roboto-Regular.woff") format("woff");
+  src: url("../assets/fonts/HelveticaLTStd-BlkCond.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "AbrilFatface";
+  font-family: "HelveticaWorld";
   font-display: swap;
-  src: url("../assets/fonts/AbrilFatface-Regular.ttf") format("truetype"),
-    url("../assets/fonts/AbrilFatface-Regular.woff") format("woff");
+  src: url("../assets/fonts/HelveticaWorld-BoldItalic.ttf") format("truetype");
 }
 
-$theme-police-1: "AbrilFatface", sans-serif;
-$theme-police-2: "Roboto-Regl", sans-serif;
+
+@font-face {
+  font-family: "Helvetica LT Std Fractions";
+  font-display: swap;
+  src: url("../assets/fonts/HelveticaLTStd-Fraction.otf") format("opentype");
+}
+
+$theme-police-1: "Helvetica LT Std", sans-serif;
+$theme-police-2: "HelveticaWorld", sans-serif;
+$theme-police-txt: "Helvetica LT Std Fractions", sans-serif;
 
 $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

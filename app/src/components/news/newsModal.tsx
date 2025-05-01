@@ -2,6 +2,7 @@ import { h } from "preact";
 import { News } from "../../model/news";
 import { Config } from "../../cfg/config.app";
 import { ISlider } from "../Slider/iSlider";
+import { IVideo } from "../Video/iVideo"; // Assuming the correct path to IVideo
 
 /**
  * Gère de détail d'une news
@@ -30,6 +31,14 @@ export function NewsModal(props: { news?: News; onClose: () => void }) {
           timer={5000}
           control={true}
           effect={"slides"}
+          maxwidth={props.news.readmore.width}
+        />
+      ) : null}
+
+      {props.news.readmore.video ? (
+        <IVideo
+          url={Config.media2news}
+          videos={props.news.readmore.video}
           maxwidth={props.news.readmore.width}
         />
       ) : null}

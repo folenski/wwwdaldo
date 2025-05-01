@@ -23,17 +23,32 @@
 .ncard {
     width: 100%;
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 35% 1fr;
     box-shadow: theme.$box-shadow;
     padding: 1rem;
     margin: 1rem 0rem;
     opacity: 0;
     animation: ncardOpacity 1s ease-in 0.2s forwards;
 
-    & img {
-        width: 350px;
-        height: auto;
-        border-radius: 0.5rem;
+    & .ncimg {
+        // le conteneur de l'image
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 350px;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+    }
+
+    & .nctext {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 1.4rem;
+        padding-left: 0.6rem;
     }
 
     & h3 {
@@ -41,6 +56,9 @@
         border-bottom: 1px solid rgb(161, 161, 161);
     }
 
+    & p {
+        margin-top: 0.5rem;
+    }
 
     @media #{variables.$small-down} {
         grid-template-columns: 1fr;
@@ -49,7 +67,7 @@
         box-shadow: unset;
         border-bottom: 1px solid rgb(161, 161, 161);
 
-        &>div:first-child {
+        &>.ncimg {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -64,22 +82,10 @@
             border-bottom: unset;
             text-align: center;
         }
-    }
 
-    & p {
-        margin-top: 0.5rem;
-    }
-
-    & a {
-        margin: 1rem 0rem;
-        text-decoration: none;
-        color: theme.$Palette-couleur-3;
-        display: flex;
-        align-items: center;
-    }
-
-    & a:hover {
-        color: theme.$Palette-couleur-5;
+        & .nctext {
+            padding: 0rem;
+        }
     }
 }
 
@@ -98,41 +104,51 @@
     }
 }
 
-// les links pdf
-.npdf {
+// les liens pdf et le bouton voir plus
+.ncmore {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & a {
+        text-decoration: none;
+        color: theme.$Palette-couleur-3;
+        display: flex;
+        align-items: center;
+    }
+
+    & a:hover {
+        color: theme.$Palette-couleur-5;
+    }
+
     & img {
         width: 1.5rem;
         margin-right: 0.5rem;
     }
-}
 
-// le bouton voir plus
-.nmore {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
+    // le bouton voir plus
+    .nbtn {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        align-items: center;
 
-    & img {
-        width: 1.5rem;
-        margin-left: 0.5rem
-    }
+        & button {
+            background: none;
+            border: none;
+            font: inherit;
+            color: theme.$Palette-couleur-3;
+            cursor: pointer;
+            line-height: inherit;
 
-    & button {
-        background: none;
-        border: none;
-        font: inherit;
-        color: theme.$Palette-couleur-3;
-        cursor: pointer;
-        line-height: inherit;
-
-        &:focus {
-            outline: none;
+            &:focus {
+                outline: none;
+            }
         }
-    }
 
-    & button:hover {
-        color: theme.$Palette-couleur-5;
+        & button:hover {
+            color: theme.$Palette-couleur-5;
+        }
     }
 }
 

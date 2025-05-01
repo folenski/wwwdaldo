@@ -25,7 +25,7 @@
 @use "modules/footer";
 
 body {
-  font-family: theme.$theme-police-2;
+  font-family: theme.$theme-police-txt;
   color: theme.$theme-font;
   background-color: theme.$Palette-couleur-1;
   overflow-x: hidden;
@@ -43,7 +43,7 @@ h1 {
 
 h2 {
   margin: 0.5rem 0rem;
-  font-family: theme.$theme-police-2;
+  font-family: theme.$theme-police-1;
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;

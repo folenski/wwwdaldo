@@ -17,7 +17,7 @@ export const Config = {
   },
   News: {
     reference: "news",
-    display: 3,
+    display: 6,
     more: {
       label : "Read more",
       src: "/images/icons/read_more_24dp.svg"

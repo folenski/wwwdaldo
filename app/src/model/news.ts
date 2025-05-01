@@ -13,6 +13,7 @@ export interface News {
   readmore?: {
     alt: string;
     width: string;
-    slide: string[];
+    slide?: string[];
+    video?: string[];
   };
 }

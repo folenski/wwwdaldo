@@ -42,7 +42,7 @@ export function NewsCard(props: {
 
   return (
     <div className="ncard">
-      <div>
+      <div className="ncimg">
         <picture>
           <source
             srcset={Config.media2news + props.onenews.poster.src + ".avif"}
@@ -55,31 +55,33 @@ export function NewsCard(props: {
           />
         </picture>
       </div>
-      <div>
-        <h3>{props.onenews.titre_1}</h3>
-        <h4>{props.onenews.titre_2}</h4>
-        {props.onenews.article.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </div>
-
-      {props.onenews.pdf ? (
-        <div className="npdf">
-          {props.onenews.pdf.map((item, index) => (
-            <PdfLink
-              key={index}
-              link={Config.media2news + item.src}
-              text={item.alt}
-            />
+      <div className="nctext">
+        <div>
+          <h3>{props.onenews.titre_1}</h3>
+          <h4>{props.onenews.titre_2}</h4>
+          {props.onenews.article.map((item, index) => (
+            <p key={index}>{item}</p>
           ))}
         </div>
-      ) : null}
-
-      {props.onenews.readmore ? (
-        <div className="nmore">
-          <More onClick={onClickMore} />
+        <div className="ncmore">
+          {props.onenews.pdf ? (
+            <div>
+              {props.onenews.pdf.map((item, index) => (
+                <PdfLink
+                  key={index}
+                  link={Config.media2news + item.src}
+                  text={item.alt}
+                />
+              ))}
+            </div>
+          ) : null}
+          {props.onenews.readmore ? (
+            <div className="nbtn">
+              <More onClick={onClickMore} />
+            </div>
+          ) : null}
         </div>
-      ) : null}
+      </div>
     </div>
   );
 }
