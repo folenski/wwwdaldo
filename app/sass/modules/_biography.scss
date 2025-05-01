@@ -1,0 +1,49 @@
+@use "../commun/variables";
+@use "theme";
+
+// *                      Page biographie
+// *********************************************************************
+
+.biography {
+  overflow: hidden;
+
+  table tr:hover {
+    background-color: theme.$Palette-couleur-4;
+    color: theme.$theme-bg;
+    font-weight: 600;
+  }
+
+  @media #{variables.$small-down} {
+    padding: 0rem 0.5rem;
+  }
+
+  hr {
+    width: 20%;
+    margin: auto;
+    border-top: 1px solid rgb(161, 161, 161);
+  }
+}
+
+.table-hover {
+  width: 100%;
+  margin: 1rem 0rem;
+
+  tr {
+    vertical-align: top;
+  }
+
+  th {
+    width: 15%;
+    padding: 0.3rem 1rem;
+    text-align: left;
+    font-weight: bolder;
+  }
+
+  td {
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    font-weight: left;
+    white-space: break-word;
+    vertical-align: top;
+  }
+}

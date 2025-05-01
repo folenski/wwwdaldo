@@ -4,9 +4,9 @@
 // *
 //********************************************************************
 
-@use "fski_css_1_00/src/reset-soft";
-@use "fski_css_1_00/src/variables";
-@use "charte";
+@use "commun/reset-soft";
+@use "commun/variables";
+@use "intro/charte";
 
 body {
   background-color: charte.$Agencement-couleur-1;

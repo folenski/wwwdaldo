@@ -1,0 +1,121 @@
+@use "../commun/variables";
+@use "theme";
+@use "modeles";
+
+$hgap: 1rem;
+// home.scss 
+// site www.daldomarte.com, page accueil
+//---------------------------------------------------------------
+.h0 {
+  @extend %paralax;
+  min-height: 700px;
+
+  @media #{variables.$small-down} {
+    min-height: 600px;
+  }
+
+  &.bg-1 {
+    background-image: url(../assets/images/bgh1.jpg);
+
+    @media #{variables.$small-down} {
+      background-image: url(../assets/images/bghlow1.jpg);
+    }
+  }
+
+  &.bg-2 {
+    background-image: url(../assets/images/bgh2.jpg);
+
+    @media #{variables.$small-down} {
+      background-image: url(../assets/images/bghlow2.jpg);
+    }
+
+  }
+}
+
+.h1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  color: theme.$theme-bg;
+  padding: 1.5rem;
+  margin-bottom: $hgap;
+
+  @media #{variables.$medium-down} {
+    grid-template-columns: 1fr;
+  }
+
+  & .h1c1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    @media #{variables.$medium-down} {
+      justify-content: center;
+    }
+
+  }
+
+  & .h1c2 {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & p {
+      margin: 0rem 1rem;
+    }
+  }
+}
+
+.himg1 {
+  width: 200px;
+  aspect-ratio: 10 / 14;
+
+  @media #{variables.$medium-down} {
+    width: 150px;
+  }
+}
+
+.h2 {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  overflow-x: hidden;
+  column-gap: $hgap;
+  row-gap: $hgap;
+  padding: 0rem 0.5rem;
+
+  @media #{variables.$medium-down} {
+    grid-template-columns: 1fr;
+  }
+
+  & img {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  & .h2c {
+    width: 100%;
+
+    @media #{variables.$medium-down} {
+      padding: 0rem 0.5rem;
+    }
+  }
+
+  & .two-items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media #{variables.$medium-down} {
+      margin-bottom: $hgap;
+    }
+  }
+
+}

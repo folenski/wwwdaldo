@@ -3,29 +3,98 @@
 // * 03/02/2021 Mise à jour en scss
 // * 11/12/2021 update avec fski_css_1_00
 // * 05/02/2022 fix ipad paralax
+// * 01/03/2025 refactoring du css
 //********************************************************************
 
-@use "fski_css_1_00/src/reset-soft";
-@use "fski_css_1_00/src/variables";
-@use "perso/theme";
-@use "fski_css_1_00/src/container";
-@use "fski_css_1_00/src/modeles";
-@use "fski_css_1_00/src/form";
+@use "commun/reset-soft";
+@use "commun/variables";
 
-@use "perso/daldo-commun";
-@use "perso/daldo-menu";
-@use "perso/menu-mobile";
-@use "perso/islider";
-@use "perso/home";
-@use "perso/news";
-@use "perso/video";
+@use "modules/theme";
+@use "modules/container";
+@use "modules/modeles";
+@use "modules/daldo-menu";
+@use "modules/menu-mobile";
+@use "modules/islider";
+@use "modules/home";
+@use "modules/news";
+@use "modules/biography";
+@use "modules/video";
+@use "modules/contact";
+@use "modules/form";
+@use "modules/heading";
+@use "modules/footer";
+
+body {
+  font-family: theme.$theme-police-txt;
+  color: theme.$theme-font;
+  background-color: theme.$Palette-couleur-1;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0rem;
+  font-size: 2.2rem;
+  font-family: theme.$theme-police-1;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0.5rem 0rem;
+  font-family: theme.$theme-police-1;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-family: theme.$theme-police-2;
+  text-shadow: 1px 1px 4px #888888;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-family: theme.$theme-police-2;
+  font-size: 1.4rem;
+  margin: 20px auto;
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.3rem;
+  white-space: break-word;
+}
+
+.btn {
+  @extend %supp-a-btn;
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: none;
+  transition: 0.5s ease;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
 
 .hide-small {
   @media #{variables.$small-down} {
     display: none;
   }
 }
-
 
 .myhomeparalax {
 
@@ -55,7 +124,6 @@
     width: 150px;
   }
 }
-
 
 .shadow {
   box-shadow: theme.$box-shadow;
@@ -103,61 +171,6 @@
   }
 }
 
-
-// *
-// *                  biographie de Daldo Marte
-// *********************************************************************
-
-.biography {
-  overflow: hidden;
-
-  table tr:hover {
-    background-color: theme.$Palette-couleur-4;
-    color: theme.$theme-bg;
-    font-weight: 600;
-  }
-
-  @media #{variables.$small-down} {
-    padding: 0rem 0.5rem;
-  }
-
-  hr {
-    width: 20%;
-    margin: auto;
-    border-top: 1px solid rgb(161, 161, 161);
-  }
-}
-
-
-// *
-// *                Le formulaire de contact
-// *********************************************************************
-.contact {
-  min-width: 320px;
-  text-align: center;
-  padding: 2rem;
-
-  @media #{variables.$small-down} {
-    padding: 0.5rem;
-  }
-}
-
-.form-overlay {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  font-weight: 500;
-}
-
-.btn {
-  margin-top: 2rem;
-
-  &:hover {
-    background-color: theme.$Palette-couleur-2;
-    font-weight: bolder;
-    cursor: pointer;
-  }
-}
-
 // *
 // *                 Le chargement
 // *********************************************************************
@@ -170,4 +183,18 @@
   z-index: 100;
   height: 100vh;
   width: 100vw;
+}
+
+// *
+// *                 L'en-tete de certaines pages
+// *********************************************************************
+
+.HTitle {
+  margin: 0px;
+  min-height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
 }

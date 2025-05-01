@@ -2,6 +2,8 @@
 
 /**
  * daldo.php
+ * 2025-03-02 : remove news section
+ * 
  */
 
 $daldo_script = "/js/daldo.js";
@@ -15,7 +17,6 @@ require __DIR__ . "/header.php";
     <div data-component="MyD"><!--Header--></div>
     <?php
     echo $render["content"] ?? "";
-    echo $render["news"] ?? "";
     require __DIR__ . "/footer.php";
     ?>
 </body>

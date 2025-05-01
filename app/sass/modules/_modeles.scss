@@ -1,0 +1,70 @@
+// *  fski_css_1_00 - css perso
+// *
+// *  19/02/2021  Version initiale
+// *
+//********************************************************************
+@use "sass:list";
+@use "../commun/variables";
+
+//* Les alertes
+//************************
+.alert {
+  margin: 2rem 0rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in;
+
+  span.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.shadow {
+  box-shadow: 1px 1px 0 rgba($color: black, $alpha: 0.2),
+    0 8px 25px 0 rgba($color: black, $alpha: 0.19);
+}
+
+
+// * Gestion du Menu Top
+//************************
+.position-top {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: 30;
+}
+
+%paralax {
+  width: 100%;
+  overflow: hidden;
+
+  @supports (-webkit-touch-callout: none) {
+    background: {
+      attachment: scroll;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    background: {
+      attachment: fixed;
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+}
